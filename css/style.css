@@ -1,4 +1,62 @@
 /* Общие установки */
+/* установка шрифтов */
+/* montserrat-regular - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Montserrat Regular'), local('Montserrat-Regular'),
+       url('../fonts/montserrat-v12-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/montserrat-v12-latin-regular.woff') format('woff'); /* Modern Browsers */
+       
+}
+/* montserrat-700 - latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+ 
+  src: local('Montserrat Bold'), local('Montserrat-Bold'),
+       url('../fonts/montserrat-v12-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/montserrat-v12-latin-700.woff') format('woff'); /* Modern Browsers */
+      
+}
+
+/* roboto-slab-regular - latin */
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Slab Regular'), local('RobotoSlab-Regular'),
+       url('../fonts/roboto-slab-v7-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/roboto-slab-v7-latin-regular.woff') format('woff'); /* Modern Browsers */
+       
+}
+
+/* allura-regular - latin вместо шрифта Wisdom */
+@font-face {
+  font-family: 'Allura';
+  font-style: normal;
+  font-weight: 400;
+ 
+  src: local('Allura Regular'), local('Allura-Regular'),
+   url('../fonts/allura-v6-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+   url('../fonts/allura-v6-latin-regular.woff') format('woff'); /* Modern Browsers */
+    
+}
+
+/* voltaire-regular - latin  вместо шрифта DroidSerid*/
+@font-face {
+  font-family: 'Voltaire';
+  font-style: normal;
+  font-weight: 400;
+ 
+  src: local('Voltaire'),
+    url('../fonts/voltaire-v7-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/voltaire-v7-latin-regular.woff') format('woff'); /* Modern Browsers */
+}
+
+
 html {
   box-sizing: border-box;
 }
@@ -23,13 +81,7 @@ body {
 .flex{
   display: flex;
 }
-/*
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-*/
+
 /*
 .clearfix::after {
   display: table;
@@ -39,21 +91,23 @@ img {
 */
 /* главная страница */
 .container {
-  width: 1920px;
+  width: 1400px;
   margin: 0 auto;
   padding: 0px;
 }
 
 /* блок, по которому рассчитывается расположение элементов */
 .container-internal{
-  width: 1200px;
-  margin-left: 360px;
-  margin-right: 360px;
+  width: 940px;
+  margin-left: 230px;
+  margin-right: 230px;
 }
 
 /* параметры Header */
 .box-header{
-  height: 78px;
+  /*height: 55px;*/
+  margin-top: 55px;
+  margin-bottom: 127px;
   justify-content: space-between;
   align-items: center;
 }
@@ -61,15 +115,15 @@ img {
 
 /* параметры Лого */
 .logo-item {
-font-family: 'Montserrat', sans-serif;
-color: #95e1d3;
-font-size: 30px; 
-font-weight: 700;
+/*font-family: 'Wisdom';*/
+font-family: 'Allura';
+color: #fed136;
+font-size: 26px; /* Approximation due to font substitution */
+/*line-height: 41px; */
 text-align: left;
-list-style: none;
-margin: 0px;
-
+margin:0px;
 }
+
 /* стили для блока навигации  */
 .box-navigation{
   display: block;
@@ -83,9 +137,10 @@ margin: 0px;
   
   display:flex;
   justify-content: space-between;
-  width: 491px;
+  width: 411px;
    padding: 0px;
    margin: 0px;
+ /*  margin-bottom:127px;*/
 
 /*  margin: 0;
   margin-top: 8px;
@@ -106,49 +161,29 @@ margin: 0px;
   text-transform: uppercase;
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
-  color: #95e1d3;
+  display: inline-block;
+  
+  color: #222222;
   font-size: 14px; /* Approximation due to font substitution */
   font-weight: 400;
   text-align: center;
-  display: inline-block;
  
  }
 
- /*описание "подчеркивания" элемента меню */
-.menu-item::after {
-  display: block;
-  content: ' ';
-  text-align: center;
- /* margin: 0px auto;*/
-  margin-bottom: 12px;
- /* font-size: 14px; 
-  font-weight: 400;*/
  
-  background-color: #f38181;
- /* width: 50px; */
-  width: 100%;
-  height: 3px; 
-  opacity: 0.0;
-  transition: 0.3s;
-}
 /* изменение цвета элемента меню при ховере */
 .menu-item:hover{
   cursor: pointer;
-  color: #f38181;
+  color: #fed136;
 }
 
-/* визуализация подчеркивания элемента меню при ховере */
-.box-menu li:hover .menu-item::after  {
-  opacity: 1.0;
-  transform: translateY(10px);
-}
 
  /* параметры главного блока */
 .main-content{
  /* margin: 0px;*/
   display: flex;
   flex-grow: 1;
-  margin-top:100px;
+ /* margin-top:100px;*/
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -156,116 +191,104 @@ margin: 0px;
 
 /* Блок "Сервис" */
  .service{
- /* margin-top:100px;*/
- /*width: 1200px;*/
+  margin-bottom:19px;
   padding: 0px;
   display: block;
  
  }
 /* заголовки юлока Сервис */
- .service h6{
-  font-family: 'KaushanScript', sans-serif;
-  color: #333333;
-  font-size: 24px; /* Approximation due to font substitution */
-  font-weight: 400;
+ .service p{
+  font-family: 'Voltaire', sans-serif;
+  color: #777777;
+  font-size: 16px; /* Approximation due to font substitution */
+  font-style: italic;
   text-align: center;
   margin-top:0px;
-  margin-bottom: 22px;
+  margin-bottom: 80px;
  }
 
  .service h1{
+
   font-family: 'Montserrat', sans-serif;
-  color: #333333;
-  font-size: 30px; /* Approximation due to font substitution */
+  color: #222222;
+  font-size: 40px; /* Approximation due to font substitution */
   font-weight: 700;
+  /*line-height: 75px;*/ /* Approximation due to font substitution */
   text-align: center;
   text-transform: uppercase;
   margin-top:0px;
- /* margin-bottom: 111px;*/
+  margin-bottom:19px;
+ 
  }
  /* подчеркивание заголовка блока Сервис */
- .service h1::after{
-  display: block;
-  background-color: #f38181;
-  content: ' ';
-  width: 60px;
-  height: 3px;
-  text-align: center;
-  margin: 42px auto;
-  margin-bottom: 66px;
- }
+ 
 /* элементы блока Сервис */
  .service-list{
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-between;
   padding: 0px;
   margin: 0px;
  }
+
+ 
+
+ .service-item p{
+  font-family: 'Voltaire';
+  color: #777777;
+  font-size: 16px; /* Approximation due to font substitution */
+  font-style: italic;
+  text-align: center;
+ }
+
  .service-item{
    /*display: block;*/
    list-style: none;
-   width: 400px;
+   width: 274px;
    position: relative;
-   padding-left: 91px;
+   padding-left: 0px;
+   margin-top:80px;
 }
-/*  не получилось размещение иконок данным методом */
+/* вывод иконки */
 .service-item::before {
   content: '';
   display: block;
- /* background-image: url(../img/alarm.png);*/
- /* background-repeat: no-repeat;
-  background-position: left;*/
-  width: 32px;
-  height: 32px;
-  position: absolute;
-  left:30px;
-  top:12px;
-}
-/*
-.photography{
- content: '';
- background-image: url(../img/alarm.png);
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #fed136;
  
-}
-*/
-
-/* Иконки 
-.icon {
-  width: 32px;
-  height: 32px;
+  width: 68px;
+  height: 67px;
+  background-repeat: no-repeat;
+  background-position: center;
   position: absolute;
-  left:30px;
-  top:12px;
-}
-*/
-.photography::before{
-  background-image: url(../img/alarm.png);
-}
-.line-graph::before{
-  background-image: url(../img/line.png);
+  right:50%;
+  top:-20%;
+  transform: translateX(50%);
+
+
+  
 }
 
-.computer::before{
-  background-image: url(../img/computer.png);
+.icon-basket::before{
+  background-image: url(../img/icon-basket.png);
+}
+.icon-laptop::before{
+  background-image: url(../img/Icon-Laptop.png);
+}
+.icon-locked::before{
+  background-image: url(../img/Icon-Locked.png);
 }
 
-.book::before{
-  background-image: url(../img/book.png);
-}
-.home::before{
-  background-image: url(../img/home.png);
-}
-
-.image::before{
-  background-image: url(../img/image.png);
-}
 /* описание элементов блока Сервис */
-.service-item h3{
-  font-family: Montserrat;
-  color: #333333;
-  font-size: 14px; /* Approximation due to font substitution */
-  font-weight: 400;
-  text-align: left;
+.service-item h2{
+  font-family: 'Montserrat', sans-serif;
+  color: #222222;
+  font-size: 18px; /* Approximation due to font substitution */
+  font-weight: 700;
+  line-height: 75px; /* Approximation due to font substitution */
+  text-align: center;
 }
 /*.service-item::nth-child(2){
   content: url(../img/LINE GRAPH.png);
@@ -282,271 +305,128 @@ margin: 0px;
 }
 
 .service-item p{
-  font-family: 'Roboto',sans-serif;
+  font-family: 'Roboto Slab',sans-serif;
   color: #999999;
   font-size: 15px; /* Approximation due to font substitution */
   font-weight: 400;
   line-height: 24px; /* Approximation due to font substitution */
-  text-align: left;
+  text-align: center;
 }
-/* Блок Команда */
-.team{
-  padding: 0px;
-  display: block;
-  margin-top: 92px;
+
+/* Блок Контакты */
+.contact{
+ display: block;
+  background-color: #222222;
+  /*height: 300px;*/
+  position: relative;
+ 
 }
-/* Заголовки и подчеркивание блока Сервис */
-.team h6{
-  font-family: 'KaushanScript', sans-serif;
-  color: #333333;
-  font-size: 24px; /* Approximation due to font substitution */
-  font-weight: 400;
+/* Заголовки  блока Контакты */
+.contact h6{
+  
+  font-family: 'Voltaire', sans-serif;
+  color: #777777;
+  font-size: 16px; /* Approximation due to font substitution */
   text-align: center;
   margin-top:0px;
+  margin-bottom:76px;
+}
+
+.contact h2{
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+  font-size: 40px; /* Approximation due to font substitution */
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top:110px;
   margin-bottom:23px;
 }
-
-.team h2{
+/* вывод карты */
+.contact-map{
+  width: 614px;
+  height: 537px;
+  background-image: url(../img/map.png);
+  position: absolute;
+  right:0%;
+  top: 0%;
+  margin-top: 120px;
+  background-repeat: no-repeat;
+  
+}
+/* вывод формы */
+.form-main{
   font-family: 'Montserrat', sans-serif;
-  color: #333333;
-  font-size: 30px; /* Approximation due to font substitution */
+}
+
+.contact-form{
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 210px;
+  padding-right: 0px;
+}
+
+.input{
+  width: 455px;
+  height: 50px;
+}
+
+.message-item{
+  width: 455px;
+  height: 210px;
+  align-self: flex-end; 
+  padding-top:20px;
+}
+.style-field{
+  text-transform: uppercase;
+ /* font-family: 'Montserrat';*/
+  font-family : inherit;
+  color: #000000;
+  font-size: 14px; /* Approximation due to font substitution */
+  font-weight: 700;
+  text-align: left;
+  padding-left: 20px;
+ 
+}
+/* стиль Placeholder */
+.style-field::placeholder{
+  color: #bbbbbb;
+}
+/* стили границ и проверка при вводе инофрмации в поле input*/
+.style-field:required:valid {
+  outline: 1px solid green;
+}
+
+.style-field:required:invalid  {
+  outline: 1px solid red;
+}
+
+.button-form{
+  display: block;
+  border-radius: 3px;
+  background-color: #fed136;
+  width: 240px;
+  height: 66px;
+  text-transform: uppercase;
+  font-family : inherit;
+ 
+  color: #ffffff;
+  font-size: 18px; /* Approximation due to font substitution */
   font-weight: 700;
   text-align: center;
-  text-transform: uppercase;
-  margin-top:0px;
-  margin-bottom:46px;
-}
-
-.team h2::after{
-  display: block;
-  background-color: #f38181;
-  content: ' ';
-  width: 60px;
-  height: 3px;
-  text-align: center;
-  margin: 42px auto;
-  margin-bottom: 66px;
- }
-
-.discription{
-  font-family: 'Roboto', sans-serif;
-  color: #999999;
-  font-size: 15px; 
-  font-weight: 400;
-  line-height: 24px; 
-  text-align: center;
-  margin-top:0px;
-  margin-bottom:82px;
-}
-/* должность*/
-.order-item{
-  font-family: 'Roboto', sans-serif;
-  color: #999999;
-  font-size: 15px; /* Approximation due to font substitution */
-  font-weight: 300;
-  font-style: italic;
-  line-height: 24px; /* Approximation due to font substitution */
-  text-align: center;
-  margin-top: 0px;
-  margin-bottom:85px;
-}
-/* имя */
-.name-item{
-  font-family: 'Montserrat', sans-serif;
-  color: #333333;
-  font-size: 14px; /* Approximation due to font substitution */
-  font-weight: 400;
-  text-align: center;
-  text-transform: uppercase;
-  margin-top: 31px;
-  margin-bottom:15px;
-  
-}
-
-/* Обработка изображения */
-.img-block::before {
-  position: absolute;
-  content: "";
-  background-color: #95e1d3;
-  width: 380px;
-  height: 470px;
-  z-index: -1;
-}
-
- .img-block .img-block-hover::before {
-  position: absolute;
-  content: "";
-  background: linear-gradient(to top, #fce28a, #f38181);
-  width: 380px;
-  height: 470px;
-  opacity: 0;
-  z-index: 1;
-  transition: all 0.2s linear;
-}
-
-.img-block .img-block-hover {
-  justify-content: center;
-  align-items: center;
-}
-
-
- .img-block .img-block-hover .img-item  {
-  width: 380px;
-  height: 470px;
-  transition: transform 0.2s linear; /*Задаем стиль движения*/
-}
-.img-block:hover{
-  cursor: pointer;
-}
-.img-block:hover .img-block-hover::before {
-  opacity: 0.9;
-  transform: translate(-10px, -10px);
-}
-
- .img-block:hover .img-item {
-  transform: translate(-10px, -10px);
-}
-
-.img-item{
-  display: block;
-  width: 380px;
-  height: 470px; 
-}
-
-/* обработка пиктограм */
-.block-socialnetworks{
-  position: absolute;
-  content: "";
-  background-color: #fce38a; /*#fce38a;*/
-  width: 228px;
-  height: 56px;
-  transition: transform 0.2s linear;
-  opacity: 0.0;
-  z-index: 2;
-  justify-content: space-between;
-  align-items: center;
-}
-.img-block:hover .block-socialnetworks {
-  opacity: 1.0;
-  transform: translate(-10px, -10px);
- 
-}
-.block-socialnetworks-item {
-  width: 56px;
-  height: 56px;
- 
-  justify-content: center;
-  align-items: center;
-}
-
-.block-socialnetworks-item:not(:last-child){
-  border-right: solid 1px rgba(243, 129, 129, 0.5);
-}
-.img-block:hover .block-socialnetworks-item {
-  opacity: 1.0;
-  z-index: 4;
-}
-
-.block-socialnetworks-item:hover{
-  background-color:  #95e1d3;
-}
-.img-block-socialnetworks{
- /* background-color: #95e1d3;*/
- /* width: 56px;
-  height: 56px;*/
- /* opacity: 1.0;
-  z-index: 4;*/
-  
+  margin: 0px auto;
+  margin-top: 30px;
+  margin-bottom: 77px;
 
 }
-
-.img-block:hover .img-block-socialnetworks {
-  opacity: 1.0;
- /* transform: translate(-10px, -10px);*/
- /* width: 56px;*/
- /* height: 56px;*/
-}
-.team-list{
- 
-  /*  flex-direction: column;*/
-  justify-content: space-between;
-  padding: 0px;
-  margin-top:0px;
- 
-   }
-
-
-.team-item{
-  
-/* display: flex;*/
-  width: 380px;
- /* height: 470px; */
-  list-style:none;
-  margin: 0px;
-  list-style-image: none;
-  justify-content: center;
-}
-
-
- .box-item{
- /*  display: flex;*/
-   width: 380px;
-   list-style-image: none;
- }
- 
 /* параметры footer */
 .main-footer{
-  display: flex;
-  height: 64px;
-  justify-content: space-between;
-  align-items: center;
-  border-top:  1px solid #e5e5e5; 
+  display: block;
+  height: 19px;
+  background-color:  #222222;
   
+ 
 }
-/* форма ввода e mail */
-.input-email{
-  width: 385px;
-}
- /* оле ввода */
-.field-input-email{
-  /*display: inline-block;*/
-  border-style: solid;
-  border-width: 1px;
-  border-color: #e7e7e7;
-  box-sizing: border-box;
-  background-color: #ffffff;
-  width: 230px;
-  height: 40px;
-  padding: 0px;
-}
-/*кнопка ввода */
-.button-subscribe{
-  background-color: #95e1d3;
-  width: 150px;
-  height: 40px;
-  font-family:'Montserrat', sans-serif;
-  color: #ffffff;
-  font-size: 14px; /* Approximation due to font substitution */
-  font-weight: 700;
-  text-align: center;
-  text-transform: uppercase;
-  border: 0;
-  padding:0px;
-}
-/* копирайт */
-.copiright{
-  display: inline-block;
-  font-family: 'Montserrat', sans-serif;
-  color: #333333;
-  font-size: 14px; /* Approximation due to font substitution */
-  font-weight: 400;
-  text-align: left;
-  
-
-}
-.copiright span{
-  font-family: 'Montserrat', sans-serif;
-  color: #f38181;
-  font-size: 14px; /* Approximation due to font substitution */
-  font-weight: 400;
-}
+ 
