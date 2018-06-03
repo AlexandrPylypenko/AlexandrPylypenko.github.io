@@ -39,12 +39,14 @@
     --justifycontent-navigation: center;
     --margintop-navigation:20px;
     --marginbottom-autorization: 0px;
+    --marginbottom-login: 80px;
     /* Блок промо */
     --heigth-promo: 540px;
     --width-promo: 320px;
     --width-promo-h1: var(--width-promo);
-    --marginbottom-promo-h1:19px;
-    --marginbottom-promo-p:19px;
+    --margintop-promo-h1: 0px;
+    --marginbottom-promo-h1:10px;
+    --marginbottom-promo-p:10px;
     --bi-promo:url("../img/promo-mobile.png");
     --fontsize-promo-h1: 30px;
     --fontsize-promo-p: 18px;
@@ -67,26 +69,26 @@
   }
 }
 /* Блок tablet */
-@media screen and (min-width: 768px) and (max-width: 1440px)  {
+@media screen and (min-width: 768px) and (max-width: 1200px)  {
   :root{
      /* блок навигации */
     --flexdir-navigation: row;
     --just-cont: center;
-    --heigth-promo: 700px;
     --alignitems-navigation: baseline;
+    --heigth-promo: 700px;
     --width-navigation: 668px;
     --justifycontent-navigation: space-between;
     --margintop-navigation:38px;
    
     --marginbottom-autorization: 32px;
-
+    --marginbottom-login: 110px;
    /* блок промо */
     --width-promo: 768px;
     --width-promo-h1: 520px;
     --marginleft-promo-h1: 144px;
     --margintop-promo-h1: 0px;
-    --marginbottom-promo-h1:40px;
-    --marginbottom-promo-p:34px;
+    --marginbottom-promo-h1:24px;
+    --marginbottom-promo-p:24px;
     --bi-promo:url("../img/promo-tablet.png");
     --fontsize-promo-h1: 51.97px;
     --fontsize-promo-p: 24px;
@@ -110,7 +112,7 @@
 }
 
 /* Блок desctop */
-@media screen and (min-width: 1440px)   {
+@media screen and (min-width: 1200px)   {
   :root{
      /* блок навигации */
     --flexdir-navigation: row;
@@ -122,7 +124,7 @@
     --margintop-navigation:38px;
     
     --marginbottom-autorization: 32px;
-
+    --marginbottom-login: 110px;
    /* блок промо */
     --width-promo: 1440px;
     --width-promo-h1: 520px;
@@ -153,44 +155,48 @@
 /* параметры главного блока */
 .container{
   height: auto;
-  max-width: 1440px;  /* чтобы не растягивалось бесконечно */
+  max-width: 1200px;  /* чтобы не растягивалось бесконечно */
   min-width: 320px;   /* чтобы красиво ссужалось почти до конца */
-  flex-direction: column; /* установка направления и центрирования 2-х блоков */
+ /* flex-direction:  column;  установка направления и центрирования 2-х блоков 
   justify-content: center;
   flex-wrap: nowrap;
-  align-items: center;
+  align-items: center;*/
   margin: 0 auto;
+  text-align: center;
 }
-.flex{
+/*.flex{
   display: flex;
 }
-
-.block-navigation{
+*/
+/*.block-navigation{
   justify-content: center;
-}
+}*/
+/*
+
 /* блок навигации */
 .navigation{
-  width: var(--width-navigation);
-  flex-direction: var(--flexdir-navigation);
+  
+ /* flex-direction: var(--flexdir-navigation);
   justify-content: var(--justifycontent-navigation);
-  align-items: var(--alignitems-navigation);
+  align-items: var(--alignitems-navigation);*/
+  width: var(--width-navigation);
   margin-top: var(--margintop-navigation);
 }
 /* Блок авторизации */
 .autorization{
-  align-items: center;
-  width: 151px;
-   padding: 0px;
+/*  align-items: center;*/
+ /* width: 151px;*/
+  padding: 0px;
   margin: 0px;
   margin-bottom: var(--marginbottom-autorization);
 }
 
 .login{
-  justify-content: center;
-  align-items: center;
+ /* justify-content: center;
+  align-items: center;*/
+  
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
-  font-family: Montserrat;
   color: #ffffff;
   font-size: 14px; /* Approximation due to font substitution */
   font-weight: 700;
@@ -203,7 +209,18 @@
   background-color: rgba(26, 25, 21, 0);
   width: 90px;
   height: 36px;
-  margin-bottom: 115px;
+  margin-bottom: var(--marginbottom-login); 
+  display: inline-block;
+ 
+
+}
+
+.login:hover{
+  text-decoration: none;
+  color: #ec9898;
+}
+.login:hover .border-signup{
+  border-color: #ec9898; 
 }
 /* рамка */
 .border-signup{
@@ -231,12 +248,14 @@
   text-align: center;
   margin: 0px;
   margin-bottom: 38px;
+  margin-top: var(--margintop-navigation);
 }
+/*
 .block-promo-text{
   flex-direction: column;
   align-items: center;
 }
-
+*/
 .promo h1{
   display: block;
   font-family: 'Montserrat';
@@ -278,9 +297,9 @@
 
 /* Блок Партнер */
 .partner{
-  flex-direction: column;
+ /* flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center;*/
  /* margin-left: 28px;
   margin-right: 34px;*/
   width: var(--width-partner);
@@ -310,9 +329,9 @@
  }
 
 .partner-member{
-  flex-direction: column;
+ /* flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center;*/
   width: var(--width-partner-member);
 }
 
